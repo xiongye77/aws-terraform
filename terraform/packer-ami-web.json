@@ -4,7 +4,7 @@
     "region": "ap-south-1",
     "source_ami": "ami-0d81476f28df77dde",
     "instance_type": "t2.micro",
-    "ssh_username": "ec2-user",
+    "ssh_username": "ubuntu",
     "ami_name": "web-instance {{timestamp}}"
   }],
   "provisioners": [
