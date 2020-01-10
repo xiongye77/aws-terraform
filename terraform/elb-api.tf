@@ -42,7 +42,7 @@ resource "aws_security_group" "elb-securitygroup" {
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  tags {
+  tags = {
     Name = "api-elb"
   }
 }
