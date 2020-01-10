@@ -1,6 +1,6 @@
 provider "aws" {
-  region = "eu-west-1"
-  shared_credentials_file = "/Users/gkohli/.aws/credentials"
+  region = "ap-south-1"
+  shared_credentials_file = "/var/lib/jenkins/.aws/credentials"
 }
 
 data "template_file" "api-shell-script" {
