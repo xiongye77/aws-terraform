@@ -1,10 +1,10 @@
 {
  "builders": [{
     "type": "amazon-ebs",
-    "region": "eu-west-1",
-    "source_ami": "ami-844e0bf7",
+    "region": "ap-south-1",
+    "source_ami": "ami-0217a85e28e625474 ",
     "instance_type": "t2.micro",
-    "ssh_username": "ubuntu",
+    "ssh_username": "ec2-user",
     "ami_name": "api-instance {{timestamp}}"
   }],
   "provisioners": [
