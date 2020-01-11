@@ -11,7 +11,7 @@
     {
       "type": "shell",
       "inline": ["mkdir api", "sudo apt-get  update"],
-      "pause_before": "10s"
+      "pause_before": "60s"
     },
     {
       "type": "file",
