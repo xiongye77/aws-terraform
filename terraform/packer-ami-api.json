@@ -21,8 +21,8 @@
 
     {
     "type": "shell",
-    "inline": ["cd api", "npm install"],
-    "pause_before": "10s"
+    "inline": ["cd api", "sudo npm install"],
+    "pause_before": "60s"
     }
   ]
 }
