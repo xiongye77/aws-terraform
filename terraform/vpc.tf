@@ -16,10 +16,21 @@ resource "aws_subnet" "main-public-1" {
   vpc_id = "${aws_vpc.main.id}"
   cidr_block = "10.0.1.0/24"
   map_public_ip_on_launch = "true"
-  availability_zone = "eu-west-1a"
+  availability_zone = "ap-south-1a"
 
   tags = {
     Name = "main-public-1"
+  }
+}
+
+resource "aws_subnet" "main-public-2" {
+  vpc_id = "${aws_vpc.main.id}"
+  cidr_block = "10.0.2.0/24"
+  map_public_ip_on_launch = "true"
+  availability_zone = "ap-south-1b"
+
+  tags = {
+    Name = "main-public-2"
   }
 }
 
@@ -27,7 +38,7 @@ resource "aws_subnet" "main-private-1" {
   vpc_id = "${aws_vpc.main.id}"
   cidr_block = "10.0.21.0/24"
   map_public_ip_on_launch = "false"
-  availability_zone = "eu-west-1a"
+  availability_zone = "ap-south-1a"
 
   tags = {
     Name = "main-private-1"
@@ -38,7 +49,7 @@ resource "aws_subnet" "main-private-2" {
   vpc_id = "${aws_vpc.main.id}"
   cidr_block = "10.0.22.0/24"
   map_public_ip_on_launch = "false"
-  availability_zone = "eu-west-1b"
+  availability_zone = "ap-south-1b"
 
   tags = {
     Name = "main-private-2"
@@ -70,7 +81,13 @@ resource "aws_route_table" "main-public" {
 }
 
 # route associations public
-resource "aws_route_table_association" "main-public-1-a" {
+resource "aws_route_table_association" "main-public-1-ass" {
   subnet_id = "${aws_subnet.main-public-1.id}"
+  route_table_id = "${aws_route_table.main-public.id}"
+}
+
+# route associations public
+resource "aws_route_table_association" "main-public-2-ass" {
+  subnet_id = "${aws_subnet.main-public-2.id}"
   route_table_id = "${aws_route_table.main-public.id}"
 }
